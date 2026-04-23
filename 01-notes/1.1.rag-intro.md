@@ -1,0 +1,27 @@
+**Lesson 1.1: What is RAG and why does it exist?**
+
+Let's start with the **"why"** before the **"what."** Here's the core problem RAG solves:
+
+Imagine you hired a brilliant consultant who read every book ever written — but they finished reading in December 2023 and haven't learned anything since. You can ask them anything about general knowledge and they're incredible. But ask them about your company's internal documents, last week's meeting notes, or anything after their cutoff date — they'll either say "I don't know" or worse, make something up confidently.
+
+That's exactly the problem with LLMs like ChatGPT or Claude. They're trained on a fixed dataset, frozen in time, with no knowledge of your private data.
+
+RAG is the solution. It gives the LLM a "cheat sheet" at the moment you ask a question — pulled live from your own documents.
+
+Here's the mental model that will stick with you. Since you know shell scripting, think of RAG as a two-stage Unix pipeline:
+
+Phase 1 — Indexing (like building a search index, runs once):
+>your docs → split into chunks → convert to numbers (embed) → store in vector DB
+
+![RAG Phase 1](/assets/images/rag-phase1.png)
+
+Phase 2 — Retrieval  Query (runs every time someone asks a question):
+>user question → convert to numbers → find similar chunks → feed to LLM → answer
+
+![RAG Phase 2](/assets/images/rag-phase2.png)
+
+**The 3 problems RAG solves:**
+
+**Stale knowledge** — LLMs are frozen in time. RAG lets them answer from live documents.
+**Private data** — Your company's docs never went into the LLM's training. RAG bridges that gap.
+**Hallucination** — When an LLM doesn't know something, it guesses. RAG gives it real sources to quote instead.

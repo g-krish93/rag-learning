@@ -1,0 +1,49 @@
+# Environment & secrets
+.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Vector DB / model files (can be large)
+chroma_db/
+*.faiss
+*.index
+*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.cursor
+
+# Logs
+*.log
+logs/
+
+# Data files (add back selectively if needed)
+*.csv
+*.json
+!*example*.json
